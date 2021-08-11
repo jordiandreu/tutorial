@@ -26,6 +26,22 @@ class LinkedList:
             print(current.data)
             current = current.next
 
+    def reverse_linked_list(self):
+        # Initialize three pointers
+        prev = None
+        curr = self.head
+        # next = self.head.next
+
+        while curr:
+            next = curr.next
+            # reverse direction
+            curr.next = prev
+            # shift nodes
+            prev = curr
+            curr = next
+        # set new head
+        self.head = prev
+
 
 llist = LinkedList()
 print(llist)
@@ -33,15 +49,14 @@ print(llist)
 llist.insert('a')
 llist.insert('b')
 llist.insert('c')
+llist.insert('d')
 
 llist.show()
 
+llist.reverse_linked_list()
 
-def reverse_linked_list(head):
+llist.show()
 
-    curr = head
-    prev = None
-    next = curr.next
 
 
 
